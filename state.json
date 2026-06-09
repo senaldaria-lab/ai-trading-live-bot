@@ -1,0 +1,12 @@
+{
+  "balance": 200.0,
+  "position": null,
+  "daily": {
+    "date": "2026-06-09",
+    "trades": 2,
+    "loss_pct": 2.818978913671912,
+    "pnl_usdt": -0.3368
+  },
+  "sent_signals": {},
+  "mode": "live"
+}
