@@ -4,3 +4,5 @@ __pycache__/
 structure.txt
 backup_before_agent_python_integration/
 backup_original/
+.env.example
+.claude/
