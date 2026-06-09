@@ -1,0 +1,6 @@
+.env
+__pycache__/
+*.pyc
+structure.txt
+backup_before_agent_python_integration/
+backup_original/
