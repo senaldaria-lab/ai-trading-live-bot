@@ -6,3 +6,4 @@ backup_before_agent_python_integration/
 backup_original/
 .env.example
 .claude/
+bot.log

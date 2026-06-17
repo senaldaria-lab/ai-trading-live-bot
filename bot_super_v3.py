@@ -23,11 +23,24 @@ from binance.client import Client
 # live = real Binance market buy/sell orders
 MODE = "live"
 
-TOKEN = "8727714636:AAEM1Dcw6Q-9oqN8tYa-lsaNmUXNr0D4vI8"
-CHAT_ID = "1526631733"
+def _load_env(path=".env"):
+    if not os.path.exists(path):
+        return
+    with open(path, encoding="utf-8") as f:
+        for line in f:
+            line = line.strip()
+            if not line or line.startswith("#") or "=" not in line:
+                continue
+            key, _, value = line.partition("=")
+            os.environ.setdefault(key.strip(), value.strip())
 
-API_KEY = "XUYjPRKnQxQkbUElZVSVk36qTUr2sUwCZFVtGHHJZE8cX4Y0LeJPbPiSXJZsV3RQ"
-API_SECRET = "jhENL2GTf4IWthVaL5h2MtL7aSGY6ZHMWwsWnDekBe1t86RK9jwcQ7qCsvj8ODCx"
+
+_load_env()
+
+TOKEN = os.environ["TOKEN"]
+CHAT_ID = os.environ["CHAT_ID"]
+API_KEY = os.environ["API_KEY"]
+API_SECRET = os.environ["API_SECRET"]
 
 client = Client(API_KEY, API_SECRET)
 
@@ -38,7 +51,7 @@ STATE_FILE = "state.json"
 DEMO_BALANCE_START = 100.0
 
 # Small account risk setup
-TRADE_SIZE_USDT = 12.0
+TRADE_SIZE_USDT = 100.0
 MAX_TRADES_PER_DAY = 4
 MAX_DAILY_LOSS_PCT = 2.5
 
